@@ -1,0 +1,29 @@
+<h5 class="card-title">Listado de personajes</h5>
+<table class="table table-striped">
+    <thead>
+        <th>
+            Nombre
+        </th>
+        <th>Fecha nacimiento</th>
+        <th>Foto</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let personaje of characters">
+            <td>{{personaje.name}}</td>
+            <td>{{personaje.birthday}}</td>
+            <td><img src="{{personaje.img}}" width="100px"/></td>
+        </tr>
+    </tbody>
+</table>
+<hr/>
+<div *ngIf="quote">
+<h1>{{quote[0].quote}}</h1>
+<h2>{{quote[0].author}}</h2>
+<hr/>
+</div>
+<button class="btn btn-primary"
+(click)="mostrarQuote()"
+>
+Mostrar frase
+</button><hr/>
+&copy; Sebastián Zapata y los más geniales, con sueño pero geniales
